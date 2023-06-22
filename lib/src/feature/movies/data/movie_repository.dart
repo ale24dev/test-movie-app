@@ -1,3 +1,4 @@
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 import 'package:test_app/src/feature/movies/data/model/movie_details_model.dart';
 import 'package:test_app/src/feature/movies/data/model/movie_model.dart';
@@ -10,7 +11,7 @@ class MovieRepository {
   final headers = {
     'accept': 'application/json',
     'Authorization':
-        'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyYjdiOWQ3YzY5MjRkZGFiMDU4NDVmOGM0NWVkZTg5ZSIsInN1YiI6IjY0OTUxMjg5OTdlYWI0MDE0NjUzZGVlZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.oR2fLx3FKIy2FW98-LwdwHnDB59ASDReH53HK5x9NDA',
+        'Bearer ${dotenv.get('THEMOVIEKEY')}',
   };
 
   Future<(int, MovieModel?)> getPopularMovies({int page = 1}) async {
