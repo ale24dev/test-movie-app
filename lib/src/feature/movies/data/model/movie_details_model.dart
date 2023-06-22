@@ -11,7 +11,6 @@ String movieDetailsModelToMap(MovieDetailsModel data) => json.encode(data.toMap(
 class MovieDetailsModel {
     bool adult;
     String backdropPath;
-    BelongsToCollection belongsToCollection;
     int budget;
     List<Genre> genres;
     String homepage;
@@ -38,7 +37,6 @@ class MovieDetailsModel {
     MovieDetailsModel({
         required this.adult,
         required this.backdropPath,
-        required this.belongsToCollection,
         required this.budget,
         required this.genres,
         required this.homepage,
@@ -66,7 +64,6 @@ class MovieDetailsModel {
     factory MovieDetailsModel.fromMap(Map<String, dynamic> json) => MovieDetailsModel(
         adult: json["adult"],
         backdropPath: json["backdrop_path"],
-        belongsToCollection: BelongsToCollection.fromMap(json["belongs_to_collection"]),
         budget: json["budget"],
         genres: List<Genre>.from(json["genres"].map((x) => Genre.fromMap(x))),
         homepage: json["homepage"],
@@ -94,7 +91,6 @@ class MovieDetailsModel {
     Map<String, dynamic> toMap() => {
         "adult": adult,
         "backdrop_path": backdropPath,
-        "belongs_to_collection": belongsToCollection.toMap(),
         "budget": budget,
         "genres": List<dynamic>.from(genres.map((x) => x.toMap())),
         "homepage": homepage,

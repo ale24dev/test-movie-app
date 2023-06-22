@@ -151,23 +151,27 @@ Widget _destructDetail({required String title, required List<dynamic> list}) {
   return Padding(
     padding: const EdgeInsets.symmetric(vertical: 5),
     child: Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Text('Genres: ', style: TextStyle(fontWeight: FontWeight.w500)),
-        Row(
-          children: list.asMap().entries.map((entry) {
-            int index = entry.key;
-            final genre = entry.value;
-            return Row(
-              children: [
-                Text(
-                  genre.name,
-                  style: const TextStyle(color: Colors.grey),
-                ),
-                if (index != list.length - 1)
-                  const Text(' - ', style: TextStyle(color: Colors.grey)),
-              ],
-            );
-          }).toList(),
+        Expanded(
+          child: Wrap(
+            children: list.asMap().entries.map((entry) {
+              int index = entry.key;
+              final genre = entry.value;
+              return Wrap(
+                children: [
+                  Text(
+                    genre.name,
+                    overflow: TextOverflow.clip,
+                    style: const TextStyle(color: Colors.grey),
+                  ),
+                  if (index != list.length - 1)
+                    const Text(' - ', style: TextStyle(color: Colors.grey)),
+                ],
+              );
+            }).toList(),
+          ),
         )
       ],
     ),
