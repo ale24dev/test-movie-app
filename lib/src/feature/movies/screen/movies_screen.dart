@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:test_app/src/feature/movies/cubit/movie_cubit.dart';
+import 'package:test_app/src/feature/movies/screen/movie_details.dart';
 import 'package:test_app/src/feature/movies/screen/widgets/movies_card.dart';
 
 class MoviesScreen extends StatefulWidget {
@@ -46,12 +47,22 @@ class _MoviesScreenState extends State<MoviesScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         if (index == 0)
-                           Text(
+                          Text(
                             'Popular Movies'.toUpperCase(),
                             style: const TextStyle(
-                                fontSize: 13, fontWeight: FontWeight.w600, color: Colors.grey),
+                                fontSize: 13,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.grey),
                           ),
-                        MoviesCard(movie: movie),
+                        InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          MovieDetails(movie: movie)));
+                            },
+                            child: MoviesCard(movie: movie)),
                       ],
                     );
                   },
