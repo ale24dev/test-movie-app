@@ -46,10 +46,10 @@ class _MoviesScreenState extends State<MoviesScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         if (index == 0)
-                          const Text(
-                            'Popular Movies',
-                            style: TextStyle(
-                                fontSize: 22, fontWeight: FontWeight.w600),
+                           Text(
+                            'Popular Movies'.toUpperCase(),
+                            style: const TextStyle(
+                                fontSize: 13, fontWeight: FontWeight.w600, color: Colors.grey),
                           ),
                         MoviesCard(movie: movie),
                       ],
