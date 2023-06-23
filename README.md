@@ -2,6 +2,12 @@
 
 This is a Flutter sample application that displays the most popular movies using the [The Movie Database (TMDb)](https://www.themoviedb.org/) service. It provides a simple user interface where users can explore popular movies and obtain detailed information about each movie.
 
+**Popular movies:**
+![simulator_screenshot_754FAB81-9071-41E7-AFDE-6A3ADAF99AF1](https://github.com/ale24dev/test-movie-app/assets/111847126/717e9cb6-cbfa-4b69-829d-e931204308ab)
+
+**Movie details:**
+![simulator_screenshot_7161733B-DB72-4478-AC18-CDE40273C00D](https://github.com/ale24dev/test-movie-app/assets/111847126/4576f523-71f6-4251-ba8e-6fc0562f8288)
+
 ## Key Features
 
 - **Popular Movies:** The application fetches real-time data from TMDb to display a list of the currently most popular movies. Users can view details of each movie, such as title, synopsis, rating, and release year.
